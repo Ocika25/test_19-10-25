@@ -1,0 +1,229 @@
+<!-- FILE: kontakt.html -->
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kontakt - Kinderarzt Straelen</title>
+  <meta name="description" content="Kontaktieren Sie die Kinderarztpraxis Straelen - Adresse, Telefon und Online-Formular.">
+  <link rel="canonical" href="https://www.kinderarzt-straelen.de/kontakt.html">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <img src="assets/images/logo.jpg" alt="Logo" class="logo">
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Start</a>
+        <a href="leistungen.html">Leistungen</a>
+        <a href="team.html">Team</a>
+        <a href="bilder.html">Bilder</a>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Navigation öffnen">☰</button>
+    </div>
+  </header>
+
+  <main class="container contact-page">
+    <h1>Kontakt</h1>
+    <p> In der Mittagspause erreichen Sie uns im Notfall unter <a href="tel:+4915229222661">01522-9222661</a><br>
+        <br>
+        Außerhalb unserer Sprechstunden erreichen Sie den zuständigen Notdienst für den Bereich Straelen unter der <strong>zentralen Notrufnummer</strong> <a href="tel:+49116117">116 117</a><br>
+        <br>
+        Bei akuten Notfällen können Sie sich auch direkt an die <strong>Notfallambulanz</strong> des St. Clemens Hospitals in Geldern wenden.</p>
+
+    <div class="contact-grid-full">
+      <div class="contact-info">
+        <h2>Praxis</h2>
+        <p> Heistersweg 30a<br>
+            47638 Straelen<br>
+            <br>
+            Tel.: <a href="tel:+49283492092">02834 - 92 0 92</a><br>
+            Fax: <a href="tel:+49283492093">02834 - 92 0 93</a><br>
+            <br>
+            E-Mail: <a href="mailto:praxisteam.kinderarzt@gmail.com">praxisteam.kinderarzt@gmail.com</a><br>
+      </div>
+
+      <div class="contact-form">
+  <h2>Nachricht senden</h2>
+  <form action="https://formspree.io/f/mwpnqqwv" method="POST"> <!-- Hier meine ID und dann bis 50 Mails pro Monat kostenlos-->
+    
+    <label for="name">Name *</label>
+    <input id="name" name="name" type="text" required>
+
+    <label for="email">E-Mail *</label>
+    <input id="email" name="_replyto" type="email" required>
+
+    <label for="phone">Telefon (optional)</label>
+    <input id="phone" name="phone" type="tel">
+
+    <label for="message">Anfrage *</label>
+    <textarea id="message" name="message" rows="6" required></textarea>
+
+    <!-- Einverständnis -->
+    <label class="checkbox">
+      <input type="checkbox" name="consent" required>
+      Ich stimme zu, dass meine Angaben aus dem Kontaktformular zur Beantwortung meiner Anfrage erhoben und verarbeitet werden.
+      Die Daten werden nach abgeschlossener Bearbeitung Ihrer Anfrage gelöscht.
+      Hinweis: Sie können Ihre Einwilligung jederzeit für die Zukunft per E-Mail an <a href="mailto:praxis@kinderarzt-straelen.de">praxis@kinderarzt-straelen.de</a> widerrufen.
+      Detaillierte Informationen zum Umgang mit Nutzerdaten finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </label>
+     
+
+
+
+    <!-- einfache Spam-Sperre -->
+    <label for="human">Bitte geben Sie die Zahl 2026 ein *</label>
+    <input id="human" name="human" type="text" pattern="2026" required>
+
+    <!-- Honeypot-Feld (unsichtbar für Menschen, sichtbar für Bots) -->
+<div style="display:none;">
+  <label for="website">Falls Sie ein Mensch sind, lassen Sie dieses Feld leer.</label>
+  <input type="text" id="website" name="website">
+</div>
+
+
+    <button type="submit">Absenden</button>
+  </form>
+</div>
+
+  </main>
+
+
+
+
+
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.querySelector(".contact-form form");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault(); // Seite nicht neu laden
+
+    const data = new FormData(form);
+    const action = form.action;
+
+    fetch(action, {
+      method: "POST",
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        alert("Vielen Dank! Ihre Nachricht wurde gesendet."); // Bestätigung
+        form.reset(); // Formular zurücksetzen
+      } else {
+        alert("Ups! Da ist etwas schiefgelaufen. Bitte versuchen Sie es später erneut.");
+      }
+    }).catch(error => {
+      alert("Ups! Da ist etwas schiefgelaufen. Bitte versuchen Sie es später erneut.");
+      console.error(error);
+    });
+  });
+});
+</script>
+
+
+
+
+
+
+
+<!-- ================= FOOTER ================= -->
+  <footer class="site-footer container">
+    <div class="footer-grid">
+      <div>
+        <strong>Dr. med. (MU Szeged) Gabriella Gál</strong>
+        <p>Heistersweg 30a, 47638 Straelen</p>
+      </div>
+      <nav>
+  <a href="impressum.html">Impressum</a>
+  <span class="divider"></span>
+  <a href="datenschutz.html">Datenschutz</a>
+  <span class="divider"></span>
+  <a href="#" id="cc-reopen">Cookie-Einstellungen</a>
+</nav>
+
+    </div>
+  </footer>
+
+  <!-- =========================
+       Cookie Banner & Modal
+       ========================= -->
+  <!-- Banner (sichtbar, wenn noch keine Wahl getroffen) -->
+  <div id="cc-banner" class="cc-banner" role="region" aria-label="Cookie Hinweis" hidden>
+    <div class="cc-text">
+      Wir verwenden Cookies, um unsere Website und unseren Service zu optimieren.
+      <a href="datenschutz.html" rel="noopener">Datenschutzerklärung</a>
+    </div>
+    <div class="cc-actions">
+      <button class="cc-btn cc-secondary" id="cc-accept-necessary">Nur notwendige</button>
+      <button class="cc-btn cc-outline" id="cc-manage">Einstellungen</button>
+      <button class="cc-btn cc-primary" id="cc-accept-all">Alle akzeptieren</button>
+    </div>
+  </div>
+
+  <!-- Modal für Cookie-Einstellungen -->
+  <div id="cc-modal" class="cc-modal" role="dialog" aria-modal="true" aria-labelledby="cc-modal-title" hidden>
+    <div class="cc-modal__dialog" role="document">
+      <h2 id="cc-modal-title">Cookie-Einstellungen</h2>
+      <p>Hier können Sie auswählen, welche Cookies wir setzen dürfen. Sie können Ihre Auswahl jederzeit ändern.</p>
+      <form id="cc-form" onsubmit="return false;">
+        <fieldset class="cc-fieldset">
+          <legend>Notwendige Cookies</legend>
+          <p class="cc-help">Für den Betrieb der Website erforderlich. Immer aktiv.</p>
+          <label class="cc-switch" aria-hidden="true">
+            <input type="checkbox" checked disabled>
+            <span class="cc-slider"></span>
+          </label>
+        </fieldset>
+        <fieldset class="cc-fieldset">
+          <legend>Statistik (Analytics)</legend>
+          <p class="cc-help">Hilft uns zu verstehen, wie die Website genutzt wird.</p>
+          <label class="cc-switch">
+            <input type="checkbox" id="cc-analytics" aria-label="Analytics erlauben">
+            <span class="cc-slider"></span>
+          </label>
+        </fieldset>
+        <fieldset class="cc-fieldset">
+          <legend>Marketing</legend>
+          <p class="cc-help">Zur Anzeige personalisierter Inhalte oder Werbung.</p>
+          <label class="cc-switch">
+            <input type="checkbox" id="cc-marketing" aria-label="Marketing erlauben">
+            <span class="cc-slider"></span>
+          </label>
+        </fieldset>
+        <fieldset class="cc-fieldset">
+          <legend>Externe Medien</legend>
+          <p class="cc-help">z. B. Karten oder Videos von Drittanbietern.</p>
+          <label class="cc-switch">
+            <input type="checkbox" id="cc-external" aria-label="Externe Medien erlauben">
+            <span class="cc-slider"></span>
+          </label>
+        </fieldset>
+        <div class="cc-modal__actions">
+          <button type="button" class="cc-btn cc-secondary" id="cc-close">Abbrechen</button>
+          <button type="button" class="cc-btn cc-outline" id="cc-save-necessary">Nur notwendige</button>
+          <button type="button" class="cc-btn cc-primary" id="cc-save">Speichern</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================
+       Cookie JS
+       ========================= -->
+  <script src="cookie.js"></script>
+
+  <script src="menu.js"></script>
+
+
+
+
+</body>
+</html>
